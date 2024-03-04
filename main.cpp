@@ -18,6 +18,10 @@ int main(int argv, char* argc[]){
     SDL_Texture* entity = SDL_CreateTextureFromSurface(renderer, chr);
 
 
+    SDL_Rect src = {0,48*1,48,48};
+    SDL_Rect dst = {50,175,48*4,48*4};
+
+
     bool running = true;
 
     while(running){
@@ -31,6 +35,8 @@ int main(int argv, char* argc[]){
         SDL_RenderClear(renderer);
 
         SDL_RenderCopy(renderer,tex,NULL,NULL);
+
+        SDL_RenderCopy(renderer,entity,&src,&dst);
 
         SDL_RenderPresent(renderer);
     }

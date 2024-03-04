@@ -25,14 +25,21 @@ int main(int argv, char* argc[]){
         while(SDL_PollEvent(&e)){
             if(e.type == SDL_QUIT)running = false;
 
+
         }
 
+        SDL_RenderClear(renderer);
+
+        SDL_RenderCopy(renderer,tex,NULL,NULL);
+
+        SDL_RenderPresent(renderer);
     }
 
     SDL_DestroyTexture(tex);
     SDL_DestroyTexture(entity);
     SDL_DestroyRenderer(renderer);
     SDL_DestroyWindow(window);
+
 
 return 0;
 }
